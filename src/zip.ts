@@ -1,8 +1,7 @@
 import JSZip from 'jszip'
 import axios from 'axios'
-import { exception } from 'console'
 
-const load = (url: string) => {
+export const load = (url: string) => {
   return axios.get(url,
     {
       responseType: 'arraybuffer'
@@ -19,15 +18,10 @@ const load = (url: string) => {
     })
 }
 
-const parse = (zip: JSZip, filename: string) => {
+export const parse = (zip: JSZip, filename: string) => {
   const file = zip.file(filename)
   if (!file) {
     throw new Error('Invalid file')
   }
   return file.async('string')
-}
-
-export {
-  load,
-  parse
 }
