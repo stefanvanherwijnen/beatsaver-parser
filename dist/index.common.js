@@ -12713,9 +12713,6 @@ const parse = (zip, filename) => {
 const parseBeatmaps = (unzipped) => __awaiter(void 0, void 0, void 0, function* () {
     const info = yield parseAsJson(unzipped, 'info.dat');
     const songBuffer = yield unzipped.file(info._songFilename).async('arraybuffer');
-    // let song: IAudioBufferSourceNode<IAudioContext>
-    // if (songBuffer) {
-    // }
     const beatmaps = {};
     const beatspeeds = {};
     for (const mode of info._difficultyBeatmapSets) {

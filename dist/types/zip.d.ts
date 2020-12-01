@@ -1,4 +1,3 @@
 import JSZip from 'jszip';
-declare const load: (url: string) => Promise<JSZip>;
-declare const parse: (zip: JSZip, filename: string) => Promise<string>;
-export { load, parse };
+export declare const load: (url: string) => Promise<JSZip>;
+export declare const parse: (zip: JSZip, filename: string) => Promise<string>;
